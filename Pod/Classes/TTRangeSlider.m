@@ -41,6 +41,7 @@ static const CGFloat kLabelsFontSize = 12.0f;
     //defaults:
     
     _layoutHeigth = 65;
+    _sliderLineMidY = _layoutHeigth / 2.0;
     
     _minValue = 0;
     _selectedMinimum = 10;
@@ -148,7 +149,7 @@ static const CGFloat kLabelsFontSize = 12.0f;
     //positioning for the slider line
     float barSidePadding = 16.0f;
     CGRect currentFrame = self.frame;
-    float yMiddle = currentFrame.size.height/2.0;
+    float yMiddle = self.sliderLineMidY;
     CGPoint lineLeftSide = CGPointMake(barSidePadding, yMiddle);
     CGPoint lineRightSide = CGPointMake(currentFrame.size.width-barSidePadding, yMiddle);
     self.sliderLine.frame = CGRectMake(lineLeftSide.x, lineLeftSide.y, lineRightSide.x-lineLeftSide.x, self.lineHeight);

@@ -13,6 +13,10 @@ IB_DESIGNABLE
 @property (nonatomic, weak) IBOutlet id<TTRangeSliderDelegate> delegate;
 
 /**
+ * Used to slider line center y attribute, the default is 65 / 2.0
+ */
+@property (nonatomic, assign) IBInspectable float sliderLineMidY;
+/**
  * Used to confirm the layout height, the default is 65
  */
 @property (nonatomic, assign) IBInspectable float layoutHeigth;
