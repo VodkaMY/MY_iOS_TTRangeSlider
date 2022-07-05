@@ -39,6 +39,9 @@ static const CGFloat kLabelsFontSize = 12.0f;
 //do all the setup in a common place, as there can be two initialisers called depending on if storyboards or code are used. The designated initialiser isn't always called :|
 - (void)initialiseControl {
     //defaults:
+    
+    _layoutHeigth = 65;
+    
     _minValue = 0;
     _selectedMinimum = 10;
     _maxValue = 100;
@@ -181,7 +184,7 @@ static const CGFloat kLabelsFontSize = 12.0f;
 }
 
 - (CGSize)intrinsicContentSize{
-    return CGSizeMake(UIViewNoIntrinsicMetric, 65);
+    return CGSizeMake(UIViewNoIntrinsicMetric, self.layoutHeigth);
 }
 
 

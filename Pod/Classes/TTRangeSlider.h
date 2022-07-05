@@ -13,6 +13,11 @@ IB_DESIGNABLE
 @property (nonatomic, weak) IBOutlet id<TTRangeSliderDelegate> delegate;
 
 /**
+ * Used to confirm the layout height, the default is 65
+ */
+@property (nonatomic, assign) IBInspectable float layoutHeigth;
+
+/**
  * The minimum possible value to select in the range
  */
 @property (nonatomic, assign) IBInspectable float minValue;
