@@ -39,6 +39,10 @@ static const CGFloat kLabelsFontSize = 12.0f;
 //do all the setup in a common place, as there can be two initialisers called depending on if storyboards or code are used. The designated initialiser isn't always called :|
 - (void)initialiseControl {
     //defaults:
+    
+    _layoutHeigth = 65;
+    _sliderLineMidY = _layoutHeigth / 2.0;
+    
     _minValue = 0;
     _selectedMinimum = 10;
     _maxValue = 100;
@@ -145,7 +149,7 @@ static const CGFloat kLabelsFontSize = 12.0f;
     //positioning for the slider line
     float barSidePadding = 16.0f;
     CGRect currentFrame = self.frame;
-    float yMiddle = currentFrame.size.height/2.0;
+    float yMiddle = self.sliderLineMidY;
     CGPoint lineLeftSide = CGPointMake(barSidePadding, yMiddle);
     CGPoint lineRightSide = CGPointMake(currentFrame.size.width-barSidePadding, yMiddle);
     self.sliderLine.frame = CGRectMake(lineLeftSide.x, lineLeftSide.y, lineRightSide.x-lineLeftSide.x, self.lineHeight);
@@ -181,7 +185,7 @@ static const CGFloat kLabelsFontSize = 12.0f;
 }
 
 - (CGSize)intrinsicContentSize{
-    return CGSizeMake(UIViewNoIntrinsicMetric, 65);
+    return CGSizeMake(UIViewNoIntrinsicMetric, self.layoutHeigth);
 }
 
 
